@@ -21,3 +21,10 @@
 	width: 25%;
 	justify-self: center;
 }
+
+.clothing-img img {
+	flex-basis: 25%;
+	width: 15rem;
+	height: 20rem;
+	justify-self: center;
+}
