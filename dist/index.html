@@ -7,6 +7,8 @@
 	<link rel="stylesheet" href="../src/styles/reset.css">
 	<link rel="stylesheet" href="../src/styles/mainpage.css">
 	<link rel="stylesheet" href="../src/styles/womanclothing.css">
+	<link rel="stylesheet" href="../src/styles/aboutus.css">
+	<link rel="stylesheet" href="../src/styles/createaccount.css">
 	<title>Document</title>
 
 </head>
@@ -16,7 +18,7 @@
 		<div class="upper-header">
 			<section class="main-buttons">
 				<div class="main-buttons-left">
-					<button class="main-button">
+					<button class="main-button" data-button="about">
 						<img src="../src/assets/img/vogue vista image.jpeg" alt="website logo">
 					</button>
 					<button class="main-button" data-button="woman">WOMAN</button>
@@ -48,6 +50,54 @@
 
 
 	<main>
+		<section class="content" data-name="about">
+			<div class="aboutus-container">
+				<div class="aboutus-info">
+
+					<h1 class="aboutus-header">About Us</h1>
+					<div class="aboutus-info--1">
+						Welcome to Vogue Vista, where vision meets style. Founded with the passion to blend cutting-edge
+						fashion with everyday functionality, Vogue Vista is more than just a brand; it's a lifestyle.
+						Our
+						commitment is to provide innovative and stylish solutions to the modern individual, helping you
+						express your unique style with confidence.
+					</div>
+
+					<div class="aboutus-info--2">
+						At Vogue Vista, we believe that fashion should be accessible to everyone. Our diverse range of
+						products includes the latest trends in eyewear, accessories, and apparel, all crafted with the
+						highest quality materials and meticulous attention to detail. From sleek, contemporary designs
+						to
+						timeless classics, our collections are designed to elevate your wardrobe and complement your
+						personal aesthetic.
+					</div>
+
+					<div class="aboutus-info--3">
+						Our journey began in the bustling fashion hubs of Milan and New York, where our founders, a
+						dynamic
+						duo of a visionary designer and a tech-savvy entrepreneur, noticed a gap in the market for
+						fashion-forward yet functional wear. They envisioned a brand that embodies both innovation and
+						style, leading to the birth of Vogue Vista.
+					</div>
+
+					<div class="aboutus-info--4">
+						At Vogue Vista, sustainability is at the core of our operations. We are committed to ethical
+						practices and use environmentally friendly materials to minimize our impact on the planet. Every
+						purchase supports our mission to not only make you look good but also feel good about the
+						choices
+						you make.
+					</div>
+
+					<div class="aboutus-info--5">
+						Join us on this exciting voyage at Vogue Vista, where every piece tells a story of fashion,
+						innovation, and conscious living. Discover your next favorite wardrobe staple with us and see
+						the
+						world through the lens of style and sustainability.
+					</div>
+				</div>
+
+			</div>
+		</section>
 		<section class="content" data-name="woman">
 			<div class="clothing-container">
 				<div class="clothing-row">
@@ -106,6 +156,34 @@
 		</section>
 
 		<section class="content" data-name="createaccount">
+			<div class="createaccount-container">
+				<form action="">
+					<label for="name">NAME</label>
+					<input type="text" name="name" placeholder="name">
+
+					<label for="phonenumber">
+						PHONENUMBER
+					</label>
+					<input type="number">
+
+					<label for="email">
+						EMAIL
+					</label>
+					<input type="email">
+
+					<label for="password">
+						PASSWORD
+					</label>
+					<input type="text">
+
+					<button>SUBMIT</button>
+
+				</form>
+
+
+
+			</div>
+
 
 		</section>
 

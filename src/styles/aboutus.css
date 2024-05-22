@@ -1,0 +1,44 @@
+.aboutus-container {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	background-color: #ebebeb;
+	height: 100vh;
+	width: 100%;
+
+}
+
+.aboutus-header {
+	justify-content: center;
+	align-items: center;
+	font-size: 2rem;
+	width: 100%;
+	height: auto;
+}
+
+.aboutus-info {
+	width: 50%;
+	height: 70%;
+	display: flex;
+	flex-direction: column;
+}
+
+.aboutus-info--1 {
+	flex-basis: 20%;
+}
+
+.aboutus-info--2 {
+	flex-basis: 20%;
+}
+
+.aboutus-info--3 {
+	flex-basis: 20%;
+}
+
+.aboutus-info--4 {
+	flex-basis: 20%;
+}
+
+.aboutus-info--5 {
+	flex-basis: 20%;
+}
