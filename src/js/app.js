@@ -1,3 +1,5 @@
+import fetchAPI from "./ExchangeRateApi";
+
 //VARIABLES FOR MAIN PAGE
 
 const mainButtons = document.querySelectorAll(".main-button");
