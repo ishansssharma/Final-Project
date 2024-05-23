@@ -1,4 +1,4 @@
-import fetchAPI from "./ExchangeRateApi";
+import { fetchAPI, renderExchange } from "./ExchangeRateApi";
 
 //VARIABLES FOR MAIN PAGE
 

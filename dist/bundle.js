@@ -16,7 +16,7 @@
   \***********************************/
 /***/ (function(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
 
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _apikey__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./apikey */ \"./src/js/apikey.js\");\n//VARIABLES FOR THE EXCHANGE RATE SITE\nconst nokInput = document.querySelector(\".currencyinput\");\nconst convertButton = document.querySelector(\".convertbutton\");\nconst ulList = document.querySelector(\".exchangelist\");\n\n//ASYNC FUNCTION FOR API\n\nconst fetchAPI = async () => {\n  try {\n    const response = await fetch(`https://v6.exchangerate-api.com/${_apikey__WEBPACK_IMPORTED_MODULE_0__[\"default\"]}/latest/USD`);\n    const data = await response.json();\n    console.log(data);\n  } catch (error) {\n    console.log(\"something is wrong\"(error));\n  }\n};\nfetchAPI();\n/* harmony default export */ __webpack_exports__[\"default\"] = (fetchAPI);\n\n//# sourceURL=webpack://src/./src/js/ExchangeRateApi.js?");
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   fetchAPI: function() { return /* binding */ fetchAPI; },\n/* harmony export */   renderExchange: function() { return /* binding */ renderExchange; }\n/* harmony export */ });\n/* harmony import */ var _apikey__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./apikey */ \"./src/js/apikey.js\");\n//IMPORTING KEY\n\n\n//VARIABLES FOR THE EXCHANGE RATE SITE\nconst nokInput = document.querySelector(\".currencyinput\");\nconst convertButton = document.querySelector(\".convertbutton\");\nconst ulList = document.querySelector(\".exchangelist\");\n\n//ASYNC FUNCTION FOR API\n\nconst fetchAPI = async () => {\n  try {\n    const response = await fetch(`https://v6.exchangerate-api.com/${_apikey__WEBPACK_IMPORTED_MODULE_0__[\"default\"]}/latest/USD`);\n    const data = await response.json();\n    console.log(data.conversion_rates);\n    convertButton.addEventListener(\"click\", event => {\n      event.preventDefault();\n      renderExchange(data.conversion_rates.NOK, Number(nokInput.value));\n    });\n  } catch (error) {\n    console.log(\"Something went wrong\", error);\n  }\n};\nconst renderExchange = function (currencynok) {\n  let amount = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : 1;\n  ulList.textContent = \"\";\n  const NokLine = document.createElement(\"li\");\n  ulList.appendChild(NokLine);\n  NokLine.textContent = `Norwegian NOK = ${currencynok * amount}`;\n  console.log(NokLine);\n};\nfetchAPI();\n\n\n//# sourceURL=webpack://src/./src/js/ExchangeRateApi.js?");
 
 /***/ }),
 
@@ -67,6 +67,23 @@ eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _Exc
 /******/ 	}
 /******/ 	
 /************************************************************************/
+/******/ 	/* webpack/runtime/define property getters */
+/******/ 	!function() {
+/******/ 		// define getter functions for harmony exports
+/******/ 		__webpack_require__.d = function(exports, definition) {
+/******/ 			for(var key in definition) {
+/******/ 				if(__webpack_require__.o(definition, key) && !__webpack_require__.o(exports, key)) {
+/******/ 					Object.defineProperty(exports, key, { enumerable: true, get: definition[key] });
+/******/ 				}
+/******/ 			}
+/******/ 		};
+/******/ 	}();
+/******/ 	
+/******/ 	/* webpack/runtime/hasOwnProperty shorthand */
+/******/ 	!function() {
+/******/ 		__webpack_require__.o = function(obj, prop) { return Object.prototype.hasOwnProperty.call(obj, prop); }
+/******/ 	}();
+/******/ 	
 /******/ 	/* webpack/runtime/make namespace object */
 /******/ 	!function() {
 /******/ 		// define __esModule on exports
