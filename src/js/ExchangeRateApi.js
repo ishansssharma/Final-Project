@@ -28,6 +28,8 @@ const fetchAPI = async () => {
 
 }
 
+//FUNCTION FOR RENDERING THE CURRENCY EXCHANGE 
+
 const renderExchange = (currencynok, amount = 1) => {
 	ulList.textContent = "";
 	const NokLine = document.createElement("li");
@@ -41,6 +43,8 @@ const renderExchange = (currencynok, amount = 1) => {
 
 
 
-fetchAPI()
+fetchAPI();
+
+//EXPORTING THE FILE
 
 export { fetchAPI, renderExchange }
