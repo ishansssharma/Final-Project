@@ -15,7 +15,23 @@
 .lower-header {
 	display: flex;
 	flex-basis: 30%;
-	background-color: rgb(113, 70, 70);
+
+}
+
+.lowerheader-right {
+	flex-basis: 50%;
+	background-color: #ffb9b9;
+
+}
+
+.lowerheader-right button {
+	width: 100%;
+	background-color: #ffb9b9;
+}
+
+.lowerheader-left {
+	flex-basis: 50%;
+	background-color: #ffdcdc;
 }
 
 .main-buttons {

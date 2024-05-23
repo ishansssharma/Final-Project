@@ -9,6 +9,8 @@
 	<link rel="stylesheet" href="../src/styles/womanclothing.css">
 	<link rel="stylesheet" href="../src/styles/aboutus.css">
 	<link rel="stylesheet" href="../src/styles/createaccount.css">
+
+
 	<title>Document</title>
 
 </head>
@@ -42,6 +44,12 @@
 		</div>
 
 		<div class="lower-header">
+			<div class="lowerheader-left"></div>
+			<div class="lowerheader-right">
+				<button data-button="convert">Quickly convert NOK to USD with our easy-to-use exchange rate
+					tool!</button>
+			</div>
+
 
 
 		</div>
@@ -157,26 +165,26 @@
 
 		<section class="content" data-name="createaccount">
 			<div class="createaccount-container">
-				<form action="">
+				<form class="createaccount-form" action="">
 					<label for="name">NAME</label>
-					<input type="text" name="name" placeholder="name">
+					<input class="input" type="text" name="name" placeholder="NAME">
 
 					<label for="phonenumber">
 						PHONENUMBER
 					</label>
-					<input type="number">
+					<input class="input" type="number" placeholder="PHONENUMBER">
 
 					<label for="email">
 						EMAIL
 					</label>
-					<input type="email">
+					<input class="input" type="email" placeholder="EMAIL">
 
 					<label for="password">
 						PASSWORD
 					</label>
-					<input type="text">
+					<input class="input" type="text" placeholder="PASSWORD">
 
-					<button>SUBMIT</button>
+					<button class="submitbutton">SUBMIT</button>
 
 				</form>
 
@@ -185,6 +193,14 @@
 			</div>
 
 
+		</section>
+
+		<section data-name="convert">
+			<div>ADD YOUR CURRENCY</div>
+			<form action="">
+				<label for="currency">NOK</label>
+				<input class="currencyinput" type="number" placeholder="NOK">
+			</form>
 		</section>
 
 
