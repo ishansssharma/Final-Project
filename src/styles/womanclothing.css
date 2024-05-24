@@ -3,10 +3,10 @@
 	align-items: center;
 	justify-content: center;
 	flex-direction: column;
-	background-color: blue;
 	height: 100vh;
 	width: 100%;
-
+	margin: auto;
+	padding-top: 15rem;
 }
 
 .clothing-row {
@@ -25,6 +25,6 @@
 .clothing-img img {
 	flex-basis: 25%;
 	width: 15rem;
-	height: 20rem;
+	height: 15rem;
 	justify-self: center;
 }
