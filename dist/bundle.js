@@ -7,15 +7,26 @@
  * If you are looking for production-ready output files, see mode: "production" (https://webpack.js.org/configuration/mode/).
  */
 /******/ (function() { // webpackBootstrap
+/******/ 	"use strict";
 /******/ 	var __webpack_modules__ = ({
 
 /***/ "./src/js/ExchangeRateApi.js":
 /*!***********************************!*\
   !*** ./src/js/ExchangeRateApi.js ***!
   \***********************************/
-/***/ (function() {
+/***/ (function(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
 
-eval("\n\n//# sourceURL=webpack://src/./src/js/ExchangeRateApi.js?");
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _apikey__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./apikey */ \"./src/js/apikey.js\");\n//IMPORTING KEY\n\n\n//VARIABLES FOR THE EXCHANGE RATE SITE\nconst nokInput = document.querySelector(\".currencyinput\");\nconst convertButton = document.querySelector(\".convertbutton\");\nconst ulList = document.querySelector(\".exchangelist\");\n\n//ASYNC FUNCTION FOR API\n\n////const fetchAPI = async () => {\n//\ttry {\n//\t\tconst response = await fetch(`https://v6.exchangerate-api.com/${API_key}/latest/USD`);\n//\t\tconst data = await response.json();\n//\t\tconsole.log(data.conversion_rates);\n//\n//\t\tconvertButton.addEventListener(\"click\", (event) => {\n//\t\t\tevent.preventDefault();\n//\t\t\trenderExchange(data.conversion_rates.NOK, Number(nokInput.value))\n//\t\t})\n//\t} catch (error) {\n//\t\tconsole.log(\"Something went wrong\", error);\n//\t}\n//\n//\n//\n//\n//}\n//\n////FUNCTION FOR RENDERING THE CURRENCY EXCHANGE \n//\n//const renderExchange = (currencynok, amount = 1) => {\n//\tulList.textContent = \"\";\n//\tconst NokLine = document.createElement(\"li\");\n//\n//\tulList.appendChild(NokLine);\n//\n//\tNokLine.textContent = `Norwegian NOK = ${currencynok * amount}`;\n//\tconsole.log(NokLine);\n//\n//}\n//\n//\n//\n//fetchAPI();\n//\n////EXPORTING THE FILE\n//\n//export { fetchAPI, renderExchange }\n//\n\n//# sourceURL=webpack://src/./src/js/ExchangeRateApi.js?");
+
+/***/ }),
+
+/***/ "./src/js/apikey.js":
+/*!**************************!*\
+  !*** ./src/js/apikey.js ***!
+  \**************************/
+/***/ (function(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
+
+eval("__webpack_require__.r(__webpack_exports__);\nconst API_key = \"v6/06a031a8a2b698dd2edb02c8\";\n/* harmony default export */ __webpack_exports__[\"default\"] = (API_key);\n\n//# sourceURL=webpack://src/./src/js/apikey.js?");
 
 /***/ }),
 
@@ -25,8 +36,7 @@ eval("\n\n//# sourceURL=webpack://src/./src/js/ExchangeRateApi.js?");
   \***********************/
 /***/ (function(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
 
-"use strict";
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _ExchangeRateApi__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./ExchangeRateApi */ \"./src/js/ExchangeRateApi.js\");\n/* harmony import */ var _ExchangeRateApi__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_ExchangeRateApi__WEBPACK_IMPORTED_MODULE_0__);\n\n\n//VARIABLES FOR MAIN PAGE\n\nconst mainButtons = document.querySelectorAll(\".main-button\");\nconst pages = document.querySelectorAll(\".content\");\n\n//FUNCTIONS\n\n//SWITCHING THROUGH DIFFERENT PAGES\nmainButtons.forEach(button => {\n  button.addEventListener(\"click\", showPage);\n});\nfunction showPage(event) {\n  const button = event.currentTarget;\n  const pageToDisplay = button.dataset.button;\n  pages.forEach(page => {\n    page.classList.remove(\"content--visible\");\n    if (page.dataset.name === pageToDisplay) {\n      page.classList.add(\"content--visible\");\n    }\n  });\n  mainButtons.forEach(button => {\n    button.classList.remove(\"main-button__active\");\n    if (button.dataset.button === pageToDisplay) {\n      button.classList.add(\"main-button__active\");\n    }\n  });\n}\n\n//# sourceURL=webpack://src/./src/js/app.js?");
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _ExchangeRateApi__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./ExchangeRateApi */ \"./src/js/ExchangeRateApi.js\");\n\n\n//VARIABLES FOR MAIN PAGE\n\nconst mainButtons = document.querySelectorAll(\".main-button\");\nconst pages = document.querySelectorAll(\".content\");\n\n//FUNCTIONS\n\n//SWITCHING THROUGH DIFFERENT PAGES\nmainButtons.forEach(button => {\n  button.addEventListener(\"click\", showPage);\n});\nfunction showPage(event) {\n  const button = event.currentTarget;\n  const pageToDisplay = button.dataset.button;\n  pages.forEach(page => {\n    page.classList.remove(\"content--visible\");\n    if (page.dataset.name === pageToDisplay) {\n      page.classList.add(\"content--visible\");\n    }\n  });\n  mainButtons.forEach(button => {\n    button.classList.remove(\"main-button__active\");\n    if (button.dataset.button === pageToDisplay) {\n      button.classList.add(\"main-button__active\");\n    }\n  });\n}\n\n//# sourceURL=webpack://src/./src/js/app.js?");
 
 /***/ })
 
@@ -57,35 +67,6 @@ eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _Exc
 /******/ 	}
 /******/ 	
 /************************************************************************/
-/******/ 	/* webpack/runtime/compat get default export */
-/******/ 	!function() {
-/******/ 		// getDefaultExport function for compatibility with non-harmony modules
-/******/ 		__webpack_require__.n = function(module) {
-/******/ 			var getter = module && module.__esModule ?
-/******/ 				function() { return module['default']; } :
-/******/ 				function() { return module; };
-/******/ 			__webpack_require__.d(getter, { a: getter });
-/******/ 			return getter;
-/******/ 		};
-/******/ 	}();
-/******/ 	
-/******/ 	/* webpack/runtime/define property getters */
-/******/ 	!function() {
-/******/ 		// define getter functions for harmony exports
-/******/ 		__webpack_require__.d = function(exports, definition) {
-/******/ 			for(var key in definition) {
-/******/ 				if(__webpack_require__.o(definition, key) && !__webpack_require__.o(exports, key)) {
-/******/ 					Object.defineProperty(exports, key, { enumerable: true, get: definition[key] });
-/******/ 				}
-/******/ 			}
-/******/ 		};
-/******/ 	}();
-/******/ 	
-/******/ 	/* webpack/runtime/hasOwnProperty shorthand */
-/******/ 	!function() {
-/******/ 		__webpack_require__.o = function(obj, prop) { return Object.prototype.hasOwnProperty.call(obj, prop); }
-/******/ 	}();
-/******/ 	
 /******/ 	/* webpack/runtime/make namespace object */
 /******/ 	!function() {
 /******/ 		// define __esModule on exports
