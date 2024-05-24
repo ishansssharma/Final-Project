@@ -1,4 +1,5 @@
 import { fetchAPI, renderExchange } from "./ExchangeRateApi";
+import startCart from "./Addtocart";
 
 //VARIABLES FOR MAIN PAGE
 

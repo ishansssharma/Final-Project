@@ -10,6 +10,16 @@
 /******/ 	"use strict";
 /******/ 	var __webpack_modules__ = ({
 
+/***/ "./src/js/Addtocart.js":
+/*!*****************************!*\
+  !*** ./src/js/Addtocart.js ***!
+  \*****************************/
+/***/ (function(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
+
+eval("__webpack_require__.r(__webpack_exports__);\n//ADDING ITEMS TO CART AND ADDING PRICES\n\nconst startCart = () => {\n  const priceClothing = document.querySelectorAll(\".price-tag\");\n  const addToCartButtons = document.querySelectorAll(\".addtocart-button\");\n  const totalPriceDiv = document.querySelector(\".total-price\");\n  let totalPrice = 0;\n  const upDateTotalPrice = () => {\n    totalPriceDiv.textContent = `Total Price ${totalPrice} NOK`;\n  };\n  priceClothing.forEach(priceTag => {\n    priceTag.textContent = `${priceTag.dataset.price} NOK`;\n  });\n  addToCartButtons.forEach((button, index) => {\n    button.addEventListener(\"click\", function () {\n      const price = parseFloat(priceClothing[index].dataset.price);\n      totalPrice += price;\n      upDateTotalPrice();\n    });\n  });\n};\nstartCart();\n/* harmony default export */ __webpack_exports__[\"default\"] = (startCart);\n\n//# sourceURL=webpack://src/./src/js/Addtocart.js?");
+
+/***/ }),
+
 /***/ "./src/js/ExchangeRateApi.js":
 /*!***********************************!*\
   !*** ./src/js/ExchangeRateApi.js ***!
@@ -36,7 +46,7 @@ eval("__webpack_require__.r(__webpack_exports__);\nconst API_key = \"v6/06a031a8
   \***********************/
 /***/ (function(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
 
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _ExchangeRateApi__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./ExchangeRateApi */ \"./src/js/ExchangeRateApi.js\");\n\n\n//VARIABLES FOR MAIN PAGE\n\nconst mainButtons = document.querySelectorAll(\".main-button\");\nconst pages = document.querySelectorAll(\".content\");\n\n//FUNCTIONS\n\n//SWITCHING THROUGH DIFFERENT PAGES\nmainButtons.forEach(button => {\n  button.addEventListener(\"click\", showPage);\n});\nfunction showPage(event) {\n  const button = event.currentTarget;\n  const pageToDisplay = button.dataset.button;\n  pages.forEach(page => {\n    page.classList.remove(\"content--visible\");\n    if (page.dataset.name === pageToDisplay) {\n      page.classList.add(\"content--visible\");\n    }\n  });\n  mainButtons.forEach(button => {\n    button.classList.remove(\"main-button__active\");\n    if (button.dataset.button === pageToDisplay) {\n      button.classList.add(\"main-button__active\");\n    }\n  });\n}\n\n//# sourceURL=webpack://src/./src/js/app.js?");
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _ExchangeRateApi__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./ExchangeRateApi */ \"./src/js/ExchangeRateApi.js\");\n/* harmony import */ var _Addtocart__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./Addtocart */ \"./src/js/Addtocart.js\");\n\n\n\n//VARIABLES FOR MAIN PAGE\n\nconst mainButtons = document.querySelectorAll(\".main-button\");\nconst pages = document.querySelectorAll(\".content\");\n\n//FUNCTIONS\n\n//SWITCHING THROUGH DIFFERENT PAGES\nmainButtons.forEach(button => {\n  button.addEventListener(\"click\", showPage);\n});\nfunction showPage(event) {\n  const button = event.currentTarget;\n  const pageToDisplay = button.dataset.button;\n  pages.forEach(page => {\n    page.classList.remove(\"content--visible\");\n    if (page.dataset.name === pageToDisplay) {\n      page.classList.add(\"content--visible\");\n    }\n  });\n  mainButtons.forEach(button => {\n    button.classList.remove(\"main-button__active\");\n    if (button.dataset.button === pageToDisplay) {\n      button.classList.add(\"main-button__active\");\n    }\n  });\n}\n\n//# sourceURL=webpack://src/./src/js/app.js?");
 
 /***/ })
 
