@@ -6,7 +6,17 @@ const startCart = () => {
 	const priceClothing = document.querySelectorAll(".price-tag");
 	const addToCartButtons = document.querySelectorAll(".addtocart-button");
 	const totalPriceDiv = document.querySelector(".total-price");
+	const containerDiv = document.querySelector(".pricecontainer")
+	//CREATE BUTTON FOR REMOVING ITEM
+	const removeSingleItem = document.createElement("button");
+	const removeAllItems = document.createElement("button");
+
+	//APPENDING BUTTONS TO THE CONTAINER
+	containerDiv.append(removeSingleItem, removeAllItems);
+
+	//VARIABLES THAT UNDERGO A CHANGE 
 	let totalPrice = 0;
+	let cartArray = [];
 
 	//UPDATING THE TEXTCONTENT FOR THE PRICE DIV
 	const upDateTotalPrice = () => {
@@ -16,7 +26,7 @@ const startCart = () => {
 	//ADDING THE PRICE PER CLOTHING PIECE
 	priceClothing.forEach(priceTag => {
 		priceTag.textContent = `${priceTag.dataset.price} NOK`
-	})
+	});
 
 	//EVENT LISTENER FOR CLICKING ON THE BUTTON AND UPDATING THE THE TOTAL PRICE FOR EACH TIME
 	addToCartButtons.forEach((button, index) => {
@@ -25,10 +35,9 @@ const startCart = () => {
 			//PARSE THE PRICE USING DATASET
 			const price = parseFloat(priceClothing[index].dataset.price);
 
-
-
 			//UPDATING THE TOTALPRICE BY ADDING PRICE
 			totalPrice += price;
+			cartArray.push(price);
 
 			upDateTotalPrice();
 
@@ -36,19 +45,24 @@ const startCart = () => {
 		});
 
 	});
+
+	//FUNCTION FOR REMOVING ITEMS FROM THE CART 
 	const removeItemFromCart = () => {
 
-		const containerDiv = document.querySelector(".pricecontainer")
-		//CREATE BUTTON FOR REMOVING ITEM
-		const removeSingleItem = document.createElement("button");
-		const removeAllItems = document.createElement("button");
 
-		containerDiv.append(removeSingleItem, removeAllItems);
+
+
 		removeSingleItem.textContent = "REMOVE SINGLE CLOTHING"
 		removeAllItems.textContent = "RESET CART"
 
 		removeSingleItem.addEventListener("click", () => {
-			totalPrice -= price;
+			if (cartArray.length > 0) {
+				const removeItem = cartArray.pop()
+				totalPrice -= removeItem;
+
+			}
+
+			upDateTotalPrice()
 
 
 		})
@@ -63,21 +77,24 @@ const startCart = () => {
 
 	}
 
-
-
 	removeItemFromCart()
-
+	//FUNCTION FOR REMOVING ALL ITEMS FROM FUNCTION
 	const removeAllItemsFromCart = () => {
 
 		removeAllItems.addEventListener("click", () => {
+			totalPrice = 0;
+
+			upDateTotalPrice();
 
 		})
 	}
+
+	removeAllItemsFromCart()
 
 }
 startCart()
 
-//FUNCTION FOR REMOVING ITEMS FROM THE CART 
+
 
 
 
