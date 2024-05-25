@@ -34,6 +34,7 @@ addUsers.addEventListener("submit", (e) => {
 			console.log('user has been created');
 			addUsers.reset()
 		})
+		.catch(err => console.log(err.message))
 
 
 })
