@@ -1,6 +1,7 @@
 import { fetchAPI, renderExchange } from "./ExchangeRateApi";
 import startCart from "./Addtocart";
 
+
 //VARIABLES FOR MAIN PAGE
 
 const mainButtons = document.querySelectorAll(".main-button");
