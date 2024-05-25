@@ -1,5 +1,6 @@
 import { fetchAPI, renderExchange } from "./ExchangeRateApi";
 import startCart from "./Addtocart";
+import CreateFireBaseUsers from "./logIn";
 
 
 //VARIABLES FOR MAIN PAGE
