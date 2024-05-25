@@ -39,7 +39,10 @@ const startCart = () => {
 			totalPrice += price;
 			cartArray.push(price);
 
+			console.log(cartArray);
+
 			upDateTotalPrice();
+			cartCounter();
 
 
 		});
@@ -62,34 +65,44 @@ const startCart = () => {
 
 			}
 
-			upDateTotalPrice()
+			upDateTotalPrice();
+			cartCounter();
+
+
+			console.log(cartArray);
 
 
 		})
 
-
-
-
-
-
-
-
-
 	}
 
 	removeItemFromCart()
+
 	//FUNCTION FOR REMOVING ALL ITEMS FROM FUNCTION
 	const removeAllItemsFromCart = () => {
 
 		removeAllItems.addEventListener("click", () => {
 			totalPrice = 0;
+			cartArray.length = 0;
+
 
 			upDateTotalPrice();
+			cartCounter();
 
 		})
 	}
 
 	removeAllItemsFromCart()
+
+
+
+	const cartCounter = () => {
+		const itemCounter = document.querySelector(".items-added");
+		itemCounter.textContent = `TOTAL ITEMS ADDED ${cartArray.length}`;
+
+	}
+
+	cartCounter();
 
 }
 startCart()
