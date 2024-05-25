@@ -5,7 +5,7 @@ const startCart = () => {
 	//VARIABLES FOR THE FUNCTION FORM HTML
 	const priceClothing = document.querySelectorAll(".price-tag");
 	const addToCartButtons = document.querySelectorAll(".addtocart-button");
-	const totalPriceDiv = document.querySelector(".total-price");
+	const totalPriceDiv = document.querySelectorAll(".total-price");
 	const containerDiv = document.querySelector(".pricecontainer")
 	//CREATE BUTTON FOR REMOVING ITEM
 	const removeSingleItem = document.createElement("button");
@@ -38,6 +38,8 @@ const startCart = () => {
 			//UPDATING THE TOTALPRICE BY ADDING PRICE
 			totalPrice += price;
 			cartArray.push(price);
+
+			localStorage.setItem("item", JSON.stringify(cartArray))
 
 			console.log(cartArray);
 
@@ -84,6 +86,8 @@ const startCart = () => {
 		removeAllItems.addEventListener("click", () => {
 			totalPrice = 0;
 			cartArray.length = 0;
+
+			localStorage.removeItem("item", cartArray);
 
 
 			upDateTotalPrice();
