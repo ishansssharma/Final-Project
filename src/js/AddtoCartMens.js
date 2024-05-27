@@ -101,7 +101,7 @@ const startCartMale = () => {
 
 
 	const cartCounter = () => {
-		const itemCounter = document.querySelector(".items-added");
+		const itemCounter = document.querySelector(".items-added-mens");
 		itemCounter.textContent = `TOTAL ITEMS ADDED ${cartArray.length}`;
 
 	}

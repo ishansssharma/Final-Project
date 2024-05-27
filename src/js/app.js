@@ -2,6 +2,7 @@ import { fetchAPI, renderExchange } from "./ExchangeRateApi";
 import startCart from "./Addtocart";
 import CreateFireBaseUsers from "./logIn";
 import filterSweaters from "./filterSweater";
+import startCartMale from "./AddtoCartMens";
 
 
 //VARIABLES FOR MAIN PAGE
