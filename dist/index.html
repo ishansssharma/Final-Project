@@ -321,21 +321,32 @@
 		<section class="content" data-name="createaccount">
 			<div class="createaccount-container">
 				<form class="createaccount-form" action="">
-					<label for="name">NAME</label>
-					<input class="input fullnameinput" type="text" name="name" placeholder="NAME">
+					<label for="name">NAME
+						<input class="input fullnameinput" type="text" name="name" placeholder="NAME">
+						<span class="fullname-error"></span>
+					</label>
+
 
 					<label for="phonenumber">
 						PHONENUMBER
+						<input class="phonenumberinput input" for="phonenumber">
+						<span class="phonenumber-error"></span>
 					</label>
-					<input class="phonenumberinput input" for="email">
-					EMAIL
+
+
+					<label for="email">
+						EMAIL
+						<input class="input emailinput" type="email" placeholder="EMAIL">
+						<span class="email-error"></span>
 					</label>
-					<input class="input emailinput" type="email" placeholder="EMAIL">
+
 
 					<label for="password">
 						PASSWORD
+						<input class="input passwordinput" type="password" placeholder="PASSWORD">
+						<span class="password-error"></span>
 					</label>
-					<input class="input passwordinput" type="text" placeholder="PASSWORD">
+
 
 					<button type="submit" class="submitbutton">SUBMIT</button>
 
