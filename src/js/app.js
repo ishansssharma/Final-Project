@@ -1,8 +1,8 @@
 import { fetchAPI, renderExchange } from "./ExchangeRateApi";
-import startCart from "./Addtocart";
+import { startCart } from "./AddtocartWomens";
 import CreateFireBaseUsers from "./logIn";
 import filterSweaters from "./filterSweater";
-import startCartMale from "./AddtoCartMens";
+import { upDateTotalPriceMens, cartCounterMens, removeAllItemsFromCartMens, removeItemFromCartMens } from "./AddtoCartMens";
 
 
 //VARIABLES FOR MAIN PAGE
