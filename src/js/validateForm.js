@@ -34,7 +34,7 @@ const ErrorsDisplayed = () => {
 }
 
 
-const CheckFullName = () => {
+const checkFullName = () => {
 	const fullnameTrimmed = fullNameInput.value.trim();
 	if (!fullnameTrimmed) {
 		errorObject.fullNameError = "Please fill in your full name"
@@ -48,6 +48,38 @@ const CheckFullName = () => {
 		errorObject.fullNameError = "";
 	}
 }
+
+const checkPhoneNumber = () => {
+	const phoneNumberTrimmed = phoneNumberInput.value.trim();
+	const phoneNumberNumbers = /^[0-9]{8}$/;
+
+	if (!phoneNumberTrimmed) {
+		errorObject.phoneNumbeError = "Phone number must be filled"
+	} else if (!phoneNumberNumbers.test(phoneNumberTrimmed)) {
+		errorObject.phoneNumbeError = "Phone number must be 9 digits";
+	} else if (/[a-zA-Z]/.test(phoneNumberTrimmed)) {
+		errorObject.phoneNumbeError = "Phone number cannot contain letters";
+	} else {
+		errorObject.phoneNumbeError = "";
+	}
+
+}
+
+const checkEmail = () => {
+	const emailTrimmed = emailInput.value.trim();
+	const emailRegex = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,4}$/;
+
+	if (!emailTrimmed) {
+		errorObject.emailError = "Please fill in email"
+	} else if (!emailRegex.test(emailTrimmed)) {
+		errorObject.emailError = "Please use the right email format"
+	} else {
+		errorObject.emailError = "";
+	}
+}
+
+
 const formValidation = () => {
+
 
 }
