@@ -4,6 +4,7 @@ import CreateFireBaseUsers from "./logIn";
 import filterSweaters from "./filterSweater";
 import { upDateTotalPriceMens, cartCounterMens, removeAllItemsFromCartMens, removeItemFromCartMens } from "./AddtoCartMens";
 
+import { cartCounter, removeAllItemsFromCart, removeItemFromCart, upDateTotalPrice } from "./AddtocartWomens";
 
 //VARIABLES FOR MAIN PAGE
 
