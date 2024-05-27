@@ -32,6 +32,22 @@ const ErrorsDisplayed = () => {
 	passwordErrorSpan.textContent = errorObject.passwordError;
 
 }
+
+
+const CheckFullName = () => {
+	const fullnameTrimmed = fullNameInput.value.trim();
+	if (!fullnameTrimmed) {
+		errorObject.fullNameError = "Please fill in your full name"
+	} else if (fullnameTrimmed.length > 60) {
+		errorObject.fullNameError = "Full name must be under 50 characters"
+	} else if (fullnameTrimmed.length < 2) {
+		errorObject.fullNameError = "Full name must be over 2 characters"
+	} else if (/[0-9]/.test(fullnameTrimmed)) {
+		errorObject.fullNameError = "Full name cannot contain numbers"
+	} else {
+		errorObject.fullNameError = "";
+	}
+}
 const formValidation = () => {
 
 }
