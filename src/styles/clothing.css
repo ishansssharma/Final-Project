@@ -7,7 +7,11 @@
 
 .filter-container {
 	display: flex;
+	flex-direction: column;
 	padding-top: 2rem;
+	justify-content: center;
+	align-items: center;
+	gap: 0.2rem;
 }
 
 .filter-title {
@@ -16,6 +20,25 @@
 	align-items: center;
 
 }
+
+.filter-button,
+.reset-button {
+	background-color: black;
+	color: white;
+	width: 25%;
+	border-radius: 0.2rem;
+	padding: 0.2rem;
+
+
+}
+
+.filter-button:hover,
+.reset-button:hover {
+	background-color: black;
+	color: #ffb9b9;
+}
+
+
 
 
 
@@ -60,9 +83,40 @@
 
 }
 
+.pricecontainer {
 
-.filter-container {
 	display: flex;
 	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	width: 15;
+	gap: 0.2rem;
 
+}
+
+.items-added {
+	background-color: yellow;
+	color: black;
+	width: 100%;
+	border-radius: 0.2rem;
+	padding: 0.2rem;
+	justify-content: center;
+	align-items: center;
+	display: flex;
+
+}
+
+.removesingle-button,
+.removeall-button {
+	background-color: black;
+	color: white;
+	width: 100%;
+	border-radius: 0.2rem;
+	padding: 0.2rem;
+}
+
+.removeall-button:hover,
+.removesingle-button:hover {
+	background-color: black;
+	color: #ffb9b9;
 }

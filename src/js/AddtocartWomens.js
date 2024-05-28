@@ -15,6 +15,9 @@ containerDiv.append(removeSingleItem, removeAllItems);
 removeSingleItem.textContent = "REMOVE SINGLE CLOTHING";
 removeAllItems.textContent = "RESET CART";
 
+removeSingleItem.classList.add("removesingle-button");
+removeAllItems.classList.add("removeall-button")
+
 //VARIABLES THAT UNDERGO A CHANGE 
 let totalPrice = 0;
 let cartArray = [];
