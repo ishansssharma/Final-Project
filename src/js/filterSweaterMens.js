@@ -16,9 +16,9 @@ const filterSweatersMens = () => {
 	const showSustainableSweatersMens = () => {
 		sweaterArrayMens.forEach(img => img.style.display = 'none');
 
-		const sustainableSweaters = sweaterArrayMens.filter(img => img.dataset.sustainmens === 'sustainable');
+		const sustainableSweaters = sweaterArrayMens.filter(img => img.dataset.sustainmens === 'sustainablemens');
 
-		sustainableSweaters.forEach(img => img.style.display = 'block');
+		sustainableSweaters.forEach(img => img.style.display = 'flex');
 
 
 

@@ -2,14 +2,16 @@
 //VARIABLES FOR THE FUNCTION FORM HTML
 const priceClothing = document.querySelectorAll(".price-tag-mens");
 const addToCartButtons = document.querySelectorAll(".addtocart-button-mens");
-const totalPriceDiv = document.querySelectorAll(".total-price-mens");
+const totalPriceDiv = document.querySelector(".total-price-mens");
 const containerDiv = document.querySelector(".pricecontainer-mens")
 //CREATE BUTTON FOR REMOVING ITEM
-const removeSingleItem = document.createElement("button");
-const removeAllItems = document.createElement("button");
+const removeSingleItemMens = document.createElement("button");
+const removeAllItemsMens = document.createElement("button");
+removeSingleItemMens.textContent = "REMOVE SINGLE CLOTHING"
+removeAllItemsMens.textContent = "RESET CART"
 
 //APPENDING BUTTONS TO THE CONTAINER
-containerDiv.append(removeSingleItem, removeAllItems);
+containerDiv.append(removeSingleItemMens, removeAllItemsMens);
 
 //VARIABLES THAT UNDERGO A CHANGE 
 let totalPrice = 0;
@@ -61,45 +63,37 @@ addToCartButtons.forEach((button, index) => {
 
 //FUNCTION FOR REMOVING ITEMS FROM THE CART 
 const removeItemFromCartMens = () => {
+	if (cartArray.length > 0) {
+		const removeItem = cartArray.pop()
+		totalPrice -= removeItem;
+
+	}
+
+	upDateTotalPriceMens();
+	cartCounterMens();
 
 
+	console.log(cartArray);
 
-
-	removeSingleItem.textContent = "REMOVE SINGLE CLOTHING"
-	removeAllItems.textContent = "RESET CART"
-
-	removeSingleItem.addEventListener("click", () => {
-		if (cartArray.length > 0) {
-			const removeItem = cartArray.pop()
-			totalPrice -= removeItem;
-
-		}
-
-		upDateTotalPriceMens();
-		cartCounterMens();
-
-
-		console.log(cartArray);
-
-
-	})
 
 }
+
+
 //FUNCTION FOR REMOVING ALL ITEMS FROM FUNCTION
 const removeAllItemsFromCartMens = () => {
 
-	removeAllItems.addEventListener("click", () => {
-		totalPrice = 0;
-		cartArray.length = 0;
 
-		localStorage.removeItem("item", cartArray);
+	totalPrice = 0;
+	cartArray.length = 0;
+
+	localStorage.removeItem("item", cartArray);
 
 
-		upDateTotalPriceMens();
-		cartCounterMens();
+	upDateTotalPriceMens();
+	cartCounterMens();
 
-	})
 }
+
 
 const cartCounterMens = () => {
 	const itemCounter = document.querySelector(".items-added-mens");
@@ -107,18 +101,17 @@ const cartCounterMens = () => {
 
 }
 
+
+
+removeSingleItemMens.addEventListener("click", removeItemFromCartMens);
+removeAllItemsMens.addEventListener("click", removeAllItemsFromCartMens);
+
 cartCounterMens();
 
 
-removeAllItemsFromCartMens()
-
-
-removeItemFromCartMens()
 
 
 
 
 
-
-export { cartCounterMens, removeAllItemsFromCartMens, removeItemFromCartMens, upDateTotalPriceMens }
 

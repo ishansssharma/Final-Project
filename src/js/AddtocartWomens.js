@@ -4,7 +4,7 @@
 //VARIABLES FOR THE FUNCTION FORM HTML
 const priceClothing = document.querySelectorAll(".price-tag");
 const addToCartButtons = document.querySelectorAll(".addtocart-button");
-const totalPriceDiv = document.querySelectorAll(".total-price");
+const totalPriceDiv = document.querySelector(".total-price");
 const containerDiv = document.querySelector(".pricecontainer")
 //CREATE BUTTON FOR REMOVING ITEM
 const removeSingleItem = document.createElement("button");
@@ -12,6 +12,8 @@ const removeAllItems = document.createElement("button");
 
 //APPENDING BUTTONS TO THE CONTAINER
 containerDiv.append(removeSingleItem, removeAllItems);
+removeSingleItem.textContent = "REMOVE SINGLE CLOTHING";
+removeAllItems.textContent = "RESET CART";
 
 //VARIABLES THAT UNDERGO A CHANGE 
 let totalPrice = 0;
@@ -52,50 +54,42 @@ addToCartButtons.forEach((button, index) => {
 
 //FUNCTION FOR REMOVING ITEMS FROM THE CART 
 const removeItemFromCart = () => {
+	if (cartArray.length > 0) {
+		const removeItem = cartArray.pop()
+		totalPrice -= removeItem;
+
+	}
+
+	upDateTotalPrice();
+	cartCounter();
 
 
+	console.log(cartArray);
 
-
-	removeSingleItem.textContent = "REMOVE SINGLE CLOTHING"
-	removeAllItems.textContent = "RESET CART"
-
-	removeSingleItem.addEventListener("click", () => {
-		if (cartArray.length > 0) {
-			const removeItem = cartArray.pop()
-			totalPrice -= removeItem;
-
-		}
-
-		upDateTotalPrice();
-		cartCounter();
-
-
-		console.log(cartArray);
-
-
-	})
 
 }
 
-removeItemFromCart()
+
+
+
+
 
 //FUNCTION FOR REMOVING ALL ITEMS FROM FUNCTION
 const removeAllItemsFromCart = () => {
 
-	removeAllItems.addEventListener("click", () => {
-		totalPrice = 0;
-		cartArray.length = 0;
 
-		localStorage.removeItem("item", cartArray);
+	totalPrice = 0;
+	cartArray.length = 0;
+
+	localStorage.removeItem("item", cartArray);
 
 
-		upDateTotalPrice();
-		cartCounter();
+	upDateTotalPrice();
+	cartCounter();
 
-	})
-}
+};
 
-removeAllItemsFromCart()
+
 
 
 
@@ -107,6 +101,8 @@ const cartCounter = () => {
 
 cartCounter();
 
+removeSingleItem.addEventListener("click", removeItemFromCart);
+removeAllItems.addEventListener("click", removeAllItemsFromCart);
 
 
 
@@ -114,5 +110,7 @@ cartCounter();
 
 
 
-export { cartCounter, removeAllItemsFromCart, removeItemFromCart, upDateTotalPrice, }
+
+
+
 

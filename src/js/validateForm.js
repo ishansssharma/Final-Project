@@ -1,6 +1,5 @@
 
 //VARIABLES FOR INPUTS 
-const form = document.querySelector(".createaccount-form");
 const fullNameInput = document.querySelector(".fullnameinput");
 const phoneNumberInput = document.querySelector(".phonenumberinput");
 const emailInput = document.querySelector(".emailinput");
@@ -21,7 +20,6 @@ const errorObject = {
 	phoneNumberError: "",
 	emailError: "",
 	passwordError: "",
-
 
 }
 
@@ -47,6 +45,7 @@ const checkFullName = () => {
 		errorObject.fullNameError = "Full name cannot contain numbers"
 	} else {
 		errorObject.fullNameError = "";
+		return true
 	}
 }
 
@@ -62,6 +61,7 @@ const checkPhoneNumber = () => {
 		errorObject.phoneNumberError = "Phone number cannot contain letters";
 	} else {
 		errorObject.phoneNumberError = "";
+		return true
 	}
 
 }
@@ -74,6 +74,7 @@ const checkPassword = () => {
 		errorObject.passwordError = "Password must be at least 8 characters"
 	} else {
 		errorObject.passwordError = "";
+		return true
 	}
 }
 
@@ -87,6 +88,7 @@ const checkEmail = () => {
 		errorObject.emailError = "Please use the right email format"
 	} else {
 		errorObject.emailError = "";
+		return true
 	}
 }
 
@@ -94,12 +96,11 @@ const checkEmail = () => {
 
 
 const formValidation = () => {
-	checkFullName();
-	checkEmail();
-	checkPhoneNumber();
-	checkPassword();
-
-	return Object.values(errorObject).every(x => x === "");
+	if (checkFullName() || checkEmail() || checkPhoneNumber() || checkPassword()) {
+		return true
+	} else {
+		return false
+	}
 }
 
 const validationMessage = () => {
@@ -116,14 +117,12 @@ const validationMessage = () => {
 	}
 }
 
-form.addEventListener("submit", (event) => {
-	event.preventDefault();
-	formValidation();
-	validationMessage();
-})
+//submitButton.addEventListener("click", (event) => {
+//	event.preventDefault();
+//	formValidation();
+//	validationMessage();
+//})
 
-formValidation();
-validationMessage();
+export { formValidation, validationMessage }
 
 
-export { formValidation, validationMessage, checkEmail, checkFullName, checkPassword, checkPhoneNumber }

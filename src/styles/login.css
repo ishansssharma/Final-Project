@@ -1,0 +1,23 @@
+.signoutbutton-visible {
+	display: flex;
+}
+
+.signoutbutton {
+	display: none;
+}
+
+.signinbutton {
+	display: none;
+}
+
+.signinbutton-visible {
+	display: flex;
+}
+
+.signupbutton {
+	display: none;
+}
+
+.signupbutton-visible {
+	display: flex;
+}
