@@ -3,6 +3,7 @@ import { startCart } from "./AddtocartWomens";
 import CreateFireBaseUsers from "./logIn";
 import filterSweaters from "./filterSweater";
 import { upDateTotalPriceMens, cartCounterMens, removeAllItemsFromCartMens, removeItemFromCartMens } from "./AddtoCartMens";
+import { formValidation, validationMessage, checkEmail, checkFullName, checkPassword, checkPhoneNumber } from "./validateForm"
 
 import { cartCounter, removeAllItemsFromCart, removeItemFromCart, upDateTotalPrice } from "./AddtocartWomens";
 

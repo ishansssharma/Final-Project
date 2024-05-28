@@ -65,6 +65,17 @@ const checkPhoneNumber = () => {
 
 }
 
+const checkPassword = () => {
+	const passwordTrimmed = passwordInput.value.trim();
+	if (!passwordTrimmed) {
+		errorObject.passwordError = "Please make your password"
+	} else if (passwordTrimmed < 8) {
+		errorObject.passwordError = "Password must be at least 8 characters"
+	} else {
+		errorObject.passwordError = "";
+	}
+}
+
 const checkEmail = () => {
 	const emailTrimmed = emailInput.value.trim();
 	const emailRegex = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,4}$/;
@@ -79,7 +90,31 @@ const checkEmail = () => {
 }
 
 
+
+
 const formValidation = () => {
+	checkFullName();
+	checkEmail();
+	checkPhoneNumber();
+	checkPassword();
 
-
+	//return Object.values(errorObject).every(x => x === "");
 }
+
+const validationMessage = () => {
+	const validationMessage = document.querySelector(".form-message");
+	const messageDiv = document.createElement("div");
+
+	validationMessage.appendChild(messageDiv);
+	if (formValidation()) {
+		messageDiv.textContent = "Account has been created"
+	} else {
+		messageDiv.textContent = "Account could not be created. Please correct the mistakes"
+	}
+}
+
+formValidation();
+validationMessage();
+
+
+export { formValidation, validationMessage, checkEmail, checkFullName, checkPassword, checkPhoneNumber }
