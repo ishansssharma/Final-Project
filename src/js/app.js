@@ -3,7 +3,7 @@ import { startCart } from "./AddtocartWomens";
 import "./logIn";
 import filterSweaters from "./filterSweater";
 import "./AddtoCartMens";
-//import "./validateForm"
+import "./validateForm"
 import "./AddtocartWomens";
 import "./filterSweaterMens"
 

@@ -2,7 +2,7 @@
 import firebaseConfig from "./firebaseConfig";
 import { initializeApp } from 'firebase/app'
 import { getAuth, signInWithEmailAndPassword, signOut, createUserWithEmailAndPassword } from "firebase/auth"
-import { formValidation, validationMessage } from "./validateForm"
+import "./validateForm"
 
 //IMPORT FROM FIRESTORE
 import { getFirestore, collection, addDoc } from 'firebase/firestore'
@@ -27,8 +27,9 @@ const signInFunction = (e) => {
 	signInWithEmailAndPassword(authService, emailInput.value, passwordInput.value)
 		.then(() => {
 			console.log("logged in");
-			signOutButton.classList.add("signout-visible")
-			signUpButton.classList.add("signoutbutton")
+			signOutButton.classList.add("signoutbutton-visible");
+			signUpButton.classList.remove("signoutbutton-visible");
+			signInButton.classList.remove("signinbutton-visible")
 		})
 		.catch(error => console.log(error.message));
 
@@ -53,7 +54,7 @@ const signUpFunction = (e) => {
 	createUserWithEmailAndPassword(authService, loginUser.email, loginUser.password)
 		.then(() => {
 			console.log("signed up")
-			signOutButton.classList.add("signout-visible")
+			signOutButton.classList.add("signoutbutton-visible")
 			signUpButton.classList.add("signupbutton")
 			signInButton.classList.add("signinbutton-visible")
 		})
@@ -62,17 +63,19 @@ const signUpFunction = (e) => {
 
 }
 
-const signOutFunction = () => {
+const signOutFunction = (e) => {
+	e.preventDefault()
 	signOut(authService)
 		.then(() => {
 			console.log("successfully signed out")
-			signOutButton.classList.add("signoutbutton")
-			signInButton.classList.add("signinbutton-visible")
+			signOutButton.classList.remove("signoutbutton-visible");
+			signInButton.classList.add("signinbutton-visible");
+			signUpButton.classList.add("signupbutton-visible")
 		})
 		.catch(error => console.log(error.message))
 }
 
-signInButton.addEventListener("click", signInFunction,)
+
 signUpButton.addEventListener("click", (e) => {
 	e.preventDefault()
 	console.log("hri");
@@ -81,7 +84,11 @@ signUpButton.addEventListener("click", (e) => {
 	}
 })
 console.log(signOutButton);
+
+
+signInButton.addEventListener("click", signInFunction)
 signOutButton.addEventListener("click", signOutFunction)
+signUpButton.addEventListener("click", signUpFunction)
 
 
 

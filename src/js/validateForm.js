@@ -25,7 +25,7 @@ const errorObject = {
 
 const ErrorsDisplayed = () => {
 	fullnameErrorSpan.textContent = errorObject.fullNameError;
-	phoneNumberErrorSpan.textContent = errorObject.phoneNumbeError;
+	phoneNumberErrorSpan.textContent = errorObject.phoneNumberError;
 	emailErrorSpan.textContent = errorObject.emailError;
 	passwordErrorSpan.textContent = errorObject.passwordError;
 
@@ -51,7 +51,7 @@ const checkFullName = () => {
 
 const checkPhoneNumber = () => {
 	const phoneNumberTrimmed = phoneNumberInput.value.trim();
-	const phoneNumberNumbers = /^[0-9]{8}$/;
+	const phoneNumberNumbers = /^[0-9]{9}$/;
 
 	if (!phoneNumberTrimmed) {
 		errorObject.phoneNumberError = "Phone number must be filled"
@@ -96,11 +96,8 @@ const checkEmail = () => {
 
 
 const formValidation = () => {
-	if (checkFullName() || checkEmail() || checkPhoneNumber() || checkPassword()) {
-		return true
-	} else {
-		return false
-	}
+	return (checkFullName() && checkEmail() && checkPhoneNumber() && checkPassword())
+
 }
 
 const validationMessage = () => {
@@ -117,12 +114,16 @@ const validationMessage = () => {
 	}
 }
 
-//submitButton.addEventListener("click", (event) => {
-//	event.preventDefault();
-//	formValidation();
-//	validationMessage();
-//})
+submitButton.addEventListener("click", (event) => {
+	event.preventDefault();
+	if (formValidation()) {
+		validationMessage();
+	}
+	else {
+		ErrorsDisplayed();
+	}
 
-export { formValidation, validationMessage }
+})
+
 
 
