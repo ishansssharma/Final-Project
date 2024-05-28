@@ -1,51 +1,46 @@
 //IMPORT FIREBASE OBEJECT FOR THE CONFIG FILE
 import firebaseConfig from "./firebaseConfig";
 import { initializeApp } from 'firebase/app'
+import { getAuth, signInWithEmailAndPassword, signOut } from "firebase/auth"
 
 //IMPORT FROM FIRESTORE
 import { getFirestore, collection, addDoc } from 'firebase/firestore'
 
-const CreateFireBaseUsers = () => {
+// INITIALIZE FIREBASE
+initializeApp(firebaseConfig);
+const authService = getAuth();
 
-	// INITIALIZE FIREBASE
-	initializeApp(firebaseConfig);
+//CONNECT TO THE USERS DATABASE ON FIREBASE
+const database = getFirestore();
+const usersCollection = collection(database, "users");
 
-	//CONNECT TO THE USERS DATABASE ON FIREBASE
-	const database = getFirestore();
-	const usersCollection = collection(database, "users");
-
-	//ADDING THE USERS TO THE COLLECTION
-	//VARIABLES FROM FORM
-	const fullname = document.querySelector(".fullnameinput");
-	const phonenumber = document.querySelector(".phonenumberinput");
-	const email = document.querySelector(".emailinput");
-	const passwordinput = document.querySelector(".passwordinput");
-	const addUsers = document.querySelector(".createaccount-form");
-
-	//CREATING AN OBJECT FOR THE USER
-	addUsers.addEventListener("submit", (e) => {
-		e.preventDefault();
-		const newUser = {
-			fullname: fullname.value,
-			phonenumber: phonenumber.value,
-			email: email.value,
-			password: passwordinput.value
-		}
-
-		//CALLING ADDDOC METHOD 
-		addDoc(usersCollection, newUser)
-			.then(() => {
-				console.log('user has been created');
-				addUsers.reset()
-			})
-			.catch(err => console.log(err.message))
+//VARIABLES FOR DISCOUNT FORM
+const emailInput = document.querySelector(".emaildiscount");
+const passwordInput = document.querySelector(".passworddiscount");
+const signInButton = document.querySelector(".discount-submit");
 
 
-	})
+const signInFunction = (e) => {
+	e.preventDefault()
+	signInWithEmailAndPassword(authService, emailInput.value, passwordInput.value)
+		.then(() => {
+			console.log("logged in");
+		})
+		.catch(error => console.log(error.message));
+}
 
+const signUpFunction = (e) => {
 
 }
 
-CreateFireBaseUsers()
+signInButton.addEventListener("click", signInFunction)
 
-export default CreateFireBaseUsers
+
+export default signInFunction
+
+
+
+
+
+
+// export default signInFunction

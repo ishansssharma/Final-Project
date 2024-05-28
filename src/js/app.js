@@ -1,6 +1,6 @@
 import { fetchAPI, renderExchange } from "./ExchangeRateApi";
 import { startCart } from "./AddtocartWomens";
-import CreateFireBaseUsers from "./logIn";
+import { signInFunction } from "./logIn";
 import filterSweaters from "./filterSweater";
 import { upDateTotalPriceMens, cartCounterMens, removeAllItemsFromCartMens, removeItemFromCartMens } from "./AddtoCartMens";
 import { formValidation, validationMessage, checkEmail, checkFullName, checkPassword, checkPhoneNumber } from "./validateForm"
