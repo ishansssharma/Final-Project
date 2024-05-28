@@ -16,7 +16,8 @@
 	width: 100%;
 }
 
-.clothing-img {
+.clothing-img,
+.clothing-imgmens {
 	flex-basis: 25%;
 	width: 25%;
 	justify-self: center;
@@ -27,4 +28,13 @@
 	width: 15rem;
 	height: 15rem;
 	justify-self: center;
+}
+
+.clothing-imgmens img {
+
+	flex-basis: 25%;
+	width: 15rem;
+	height: 15rem;
+	justify-self: center;
+
 }
