@@ -5,6 +5,17 @@
 	height: 100vh;
 }
 
+.filter-container {
+	display: flex;
+	padding-top: 2rem;
+}
+
+.filter-title {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+
+}
 
 
 
@@ -53,5 +64,5 @@
 .filter-container {
 	display: flex;
 	flex-direction: column;
-	background-color: red;
+
 }
