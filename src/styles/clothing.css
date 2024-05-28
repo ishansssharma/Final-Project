@@ -5,7 +5,8 @@
 	height: 100vh;
 }
 
-.filter-container {
+.filter-container,
+.filter-container-mens {
 	display: flex;
 	flex-direction: column;
 	padding-top: 2rem;
@@ -22,7 +23,9 @@
 }
 
 .filter-button,
-.reset-button {
+.reset-button,
+.filter-button-mens,
+.reset-button-mens {
 	background-color: black;
 	color: white;
 	width: 25%;
@@ -42,7 +45,8 @@
 
 
 
-.clothing-container {
+.clothing-container,
+.clothing-container-mens {
 	display: flex;
 	align-items: center;
 	justify-content: center;
@@ -53,7 +57,8 @@
 	padding-top: 15rem;
 }
 
-.clothing-row {
+.clothing-row,
+.clothing-row-mens {
 	display: flex;
 	flex-basis: 33%;
 	background-color: white;
@@ -75,7 +80,6 @@
 }
 
 .clothing-imgmens img {
-
 	flex-basis: 25%;
 	width: 15rem;
 	height: 15rem;
@@ -83,7 +87,8 @@
 
 }
 
-.pricecontainer {
+.pricecontainer,
+.pricecontainer-mens {
 
 	display: flex;
 	flex-direction: column;
@@ -94,7 +99,8 @@
 
 }
 
-.items-added {
+.items-added,
+.items-added-mens {
 	background-color: yellow;
 	color: black;
 	width: 100%;
@@ -107,7 +113,9 @@
 }
 
 .removesingle-button,
-.removeall-button {
+.removeall-button,
+.removesinglemens-button,
+.removeallmens-button {
 	background-color: black;
 	color: white;
 	width: 100%;
@@ -116,7 +124,9 @@
 }
 
 .removeall-button:hover,
-.removesingle-button:hover {
+.removesingle-button:hover,
+.removeallmens-button:hover,
+.removesinglemens-button:hover {
 	background-color: black;
 	color: #ffb9b9;
 }

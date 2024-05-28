@@ -10,6 +10,9 @@ const removeAllItemsMens = document.createElement("button");
 removeSingleItemMens.textContent = "REMOVE SINGLE CLOTHING"
 removeAllItemsMens.textContent = "RESET CART"
 
+removeSingleItemMens.classList.add("removesinglemens-button");
+removeAllItemsMens.classList.add("removeallmens-button");
+
 //APPENDING BUTTONS TO THE CONTAINER
 containerDiv.append(removeSingleItemMens, removeAllItemsMens);
 
