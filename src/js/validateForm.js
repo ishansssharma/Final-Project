@@ -18,7 +18,7 @@ const passwordErrorSpan = document.querySelector(".password-error")
 
 const errorObject = {
 	fullNameError: "",
-	phoneNumbeError: "",
+	phoneNumberError: "",
 	emailError: "",
 	passwordError: "",
 
@@ -33,6 +33,7 @@ const ErrorsDisplayed = () => {
 
 }
 
+ErrorsDisplayed();
 
 const checkFullName = () => {
 	const fullnameTrimmed = fullNameInput.value.trim();
@@ -54,13 +55,13 @@ const checkPhoneNumber = () => {
 	const phoneNumberNumbers = /^[0-9]{8}$/;
 
 	if (!phoneNumberTrimmed) {
-		errorObject.phoneNumbeError = "Phone number must be filled"
+		errorObject.phoneNumberError = "Phone number must be filled"
 	} else if (!phoneNumberNumbers.test(phoneNumberTrimmed)) {
-		errorObject.phoneNumbeError = "Phone number must be 9 digits";
+		errorObject.phoneNumberError = "Phone number must be 9 digits";
 	} else if (/[a-zA-Z]/.test(phoneNumberTrimmed)) {
-		errorObject.phoneNumbeError = "Phone number cannot contain letters";
+		errorObject.phoneNumberError = "Phone number cannot contain letters";
 	} else {
-		errorObject.phoneNumbeError = "";
+		errorObject.phoneNumberError = "";
 	}
 
 }
@@ -69,7 +70,7 @@ const checkPassword = () => {
 	const passwordTrimmed = passwordInput.value.trim();
 	if (!passwordTrimmed) {
 		errorObject.passwordError = "Please make your password"
-	} else if (passwordTrimmed < 8) {
+	} else if (passwordTrimmed.length < 8) {
 		errorObject.passwordError = "Password must be at least 8 characters"
 	} else {
 		errorObject.passwordError = "";
@@ -98,7 +99,7 @@ const formValidation = () => {
 	checkPhoneNumber();
 	checkPassword();
 
-	//return Object.values(errorObject).every(x => x === "");
+	return Object.values(errorObject).every(x => x === "");
 }
 
 const validationMessage = () => {
@@ -108,10 +109,18 @@ const validationMessage = () => {
 	validationMessage.appendChild(messageDiv);
 	if (formValidation()) {
 		messageDiv.textContent = "Account has been created"
-	} else {
+	} else if (!formValidation) {
 		messageDiv.textContent = "Account could not be created. Please correct the mistakes"
+	} else {
+		messageDiv.textContent = "";
 	}
 }
+
+form.addEventListener("submit", (event) => {
+	event.preventDefault();
+	formValidation();
+	validationMessage();
+})
 
 formValidation();
 validationMessage();
