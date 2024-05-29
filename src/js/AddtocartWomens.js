@@ -44,8 +44,7 @@ addToCartButtons.forEach((button, index) => {
 		cartArray.push(price);
 
 		localStorage.setItem("item", JSON.stringify(cartArray))
-
-		console.log(cartArray);
+		//CALLING ALL FUNCTIONS
 
 		upDateTotalPrice();
 		cartCounter();
@@ -67,7 +66,7 @@ const removeItemFromCart = () => {
 	cartCounter();
 
 
-	console.log(cartArray);
+
 
 
 }

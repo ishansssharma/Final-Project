@@ -46,7 +46,7 @@ addToCartButtons.forEach((button, index) => {
 
 		localStorage.setItem("item", JSON.stringify(cartArray))
 
-		console.log(cartArray);
+
 
 		upDateTotalPriceMens();
 		cartCounterMens();
@@ -72,11 +72,13 @@ const removeItemFromCartMens = () => {
 
 	}
 
+	//RUNNING BOTH FUNCTIONS 
+
 	upDateTotalPriceMens();
 	cartCounterMens();
 
 
-	console.log(cartArray);
+
 
 
 }

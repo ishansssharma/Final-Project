@@ -1,8 +1,8 @@
 //IMPORT FIREBASE OBEJECT FOR THE CONFIG FILE
-import firebaseConfig from "./firebaseConfig";
+import firebaseConfig from "./firebaseConfig.js";
 import { initializeApp } from 'firebase/app'
 import { getAuth, signInWithEmailAndPassword, signOut, createUserWithEmailAndPassword, onAuthStateChanged } from "firebase/auth"
-import "./validateForm"
+import "./validateForm.js"
 
 //IMPORT FROM FIRESTORE
 import { getFirestore, collection, addDoc } from 'firebase/firestore'

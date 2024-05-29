@@ -13,6 +13,8 @@ const filterSweaters = () => {
 		sweaterArray.push(sweater);
 	})
 
+	//MATCHING DATASETS FOR FILTERING
+
 	const showSustainableSweaters = () => {
 		sweaterArray.forEach(img => img.style.display = 'none');
 
@@ -24,6 +26,8 @@ const filterSweaters = () => {
 
 
 	}
+
+	//RESETTING BACK TO ORIGINAL 
 
 	const resetBacktoAllSweaters = () => {
 		sweaterArray.forEach(sweater => sweater.style.display = '')

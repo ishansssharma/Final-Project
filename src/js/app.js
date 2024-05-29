@@ -1,11 +1,11 @@
-import { fetchAPI, renderExchange } from "./ExchangeRateApi";
-import { startCart } from "./AddtocartWomens";
-import "./logIn";
-import filterSweaters from "./filterSweater";
-import "./AddtoCartMens";
-import "./validateForm"
-import "./AddtocartWomens";
-import "./filterSweaterMens"
+import { fetchAPI, renderExchange } from "./ExchangeRateApi.js";
+import "./AddtocartWomens.js";
+import "./logIn.js";
+import "./filterSweater.js";
+import "./AddtoCartMens.js";
+import "./validateForm.js";
+import "./AddtocartWomens.js";
+import "./filterSweaterMens.js";
 
 //VARIABLES FOR MAIN PAGE
 

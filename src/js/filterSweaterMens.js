@@ -13,6 +13,7 @@ const filterSweatersMens = () => {
 		sweaterArrayMens.push(sweater);
 	})
 
+	//FILTER BASED ON DATASET
 	const showSustainableSweatersMens = () => {
 		sweaterArrayMens.forEach(img => img.style.display = 'none');
 
@@ -25,9 +26,13 @@ const filterSweatersMens = () => {
 
 	}
 
+	//RESET BACK TO ORIGINAL 
+
 	const resetBacktoAllSweatersMens = () => {
 		sweaterArrayMens.forEach(sweater => sweater.style.display = '')
 	}
+
+	//RUN FUNCTION WHEN BUTTON IS CLICKED 
 
 	sustainableButton.addEventListener("click", showSustainableSweatersMens);
 
@@ -40,4 +45,3 @@ const filterSweatersMens = () => {
 
 filterSweatersMens();
 
-export default filterSweatersMens
