@@ -57,9 +57,11 @@ const signUpFunction = (e) => {
 			console.log("signed up")
 			signOutButton.classList.add("signoutbutton-visible")
 			signUpButton.classList.add("signupbutton")
-			signInButton.classList.add("signinbutton-visible")
+			signInButton.classList.add("signinbutton")
+
 		})
 		.catch(error => console.log(error.message))
+
 
 
 
