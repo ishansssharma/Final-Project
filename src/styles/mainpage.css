@@ -34,6 +34,7 @@
 .lowerheader-right button {
 	width: 100%;
 	background-color: #ffb9b9;
+	cursor: pointer;
 }
 
 .lowerheader-left {
@@ -47,6 +48,7 @@
 
 .lowerheader-left button {
 	width: 100%;
+	cursor: pointer;
 }
 
 .main-buttons {
