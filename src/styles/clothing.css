@@ -130,3 +130,21 @@
 	background-color: black;
 	color: #ffb9b9;
 }
+
+
+@media (max-width:1024px) {
+	.clothing-img img {
+		flex-basis: 25%;
+		width: 10rem;
+		height: 10rem;
+		justify-self: center;
+	}
+
+	.clothing-imgmens img {
+		flex-basis: 25%;
+		width: 10rem;
+		height: 10rem;
+		justify-self: center;
+
+	}
+}

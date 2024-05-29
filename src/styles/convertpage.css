@@ -1,0 +1,23 @@
+.currency-container {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	width: 100%;
+	height: 100vh;
+	flex-direction: column;
+	background-color: #ffb9b9;
+}
+
+.convertbutton {
+	background-color: black;
+	color: white;
+	width: 5rem;
+	border-radius: 0.2rem;
+	padding: 0.2rem;
+
+}
+
+.convertbutton:hover {
+	background-color: black;
+	color: #ffb9b9;
+}

@@ -61,16 +61,6 @@ const signUpFunction = (e) => {
 		})
 		.catch(error => console.log(error.message))
 
-	const alreadyinuseDiv = document.createElement("div");
-	alreadyinuseContainer.appendChild(alreadyinuseDiv);
-
-	alreadyinuseDiv.textContent = "An account with this email already exists."
-	if (error.code === 'auth/email-already-in-use') {
-		alreadyinuseDiv.classList.add("aluse-visble")
-
-	} else {
-		alreadyinuseDiv.classList.add(".aluse")
-	}
 
 
 	signupFullname.value = "";
@@ -80,6 +70,8 @@ const signUpFunction = (e) => {
 
 
 }
+
+
 
 const signOutFunction = (e) => {
 	e.preventDefault()
