@@ -1,7 +1,7 @@
 //IMPORT FIREBASE OBEJECT FOR THE CONFIG FILE
 import firebaseConfig from "./firebaseConfig";
 import { initializeApp } from 'firebase/app'
-import { getAuth, signInWithEmailAndPassword, signOut, createUserWithEmailAndPassword } from "firebase/auth"
+import { getAuth, signInWithEmailAndPassword, signOut, createUserWithEmailAndPassword, onAuthStateChanged } from "firebase/auth"
 import "./validateForm"
 
 //IMPORT FROM FIRESTORE
@@ -41,7 +41,8 @@ const signupEmail = document.querySelector(".emailinput");
 const signupPhonenumber = document.querySelector(".phonenumberinput");
 const signupPassword = document.querySelector(".passwordinput");
 
-const signUpButton = document.querySelector(".submitbutton")
+const signUpButton = document.querySelector(".submitbutton");
+const alreadyinuseContainer = document.querySelector(".alreadyinuse-message")
 
 const signUpFunction = (e) => {
 	e.preventDefault()
@@ -59,6 +60,23 @@ const signUpFunction = (e) => {
 			signInButton.classList.add("signinbutton-visible")
 		})
 		.catch(error => console.log(error.message))
+
+	const alreadyinuseDiv = document.createElement("div");
+	alreadyinuseContainer.appendChild(alreadyinuseDiv);
+
+	alreadyinuseDiv.textContent = "An account with this email already exists."
+	if (error.code === 'auth/email-already-in-use') {
+		alreadyinuseDiv.classList.add("aluse-visble")
+
+	} else {
+		alreadyinuseDiv.classList.add(".aluse")
+	}
+
+
+	signupFullname.value = "";
+	signupEmail.value = "";
+	signupPhonenumber = "";
+	signupPassword = "";
 
 
 }
@@ -91,6 +109,18 @@ signOutButton.addEventListener("click", signOutFunction)
 signUpButton.addEventListener("click", signUpFunction)
 
 
+onAuthStateChanged(authService, user => {
+	const loggedInContent = document.querySelector(".discount-sweaters");
+	if (user) {
+
+		console.log("User can access discounted sweaters");
+		loggedInContent.classList.add(".discounted-sweaters-visible");
+
+	} else {
+		console.log("User has logged out and can there not access discount anymore");
+		loggedInContent.classList.add("discounted-sweaters")
+	}
+})
 
 
 
@@ -98,4 +128,4 @@ signUpButton.addEventListener("click", signUpFunction)
 
 
 
-// export default signInFunction
+

@@ -70,11 +70,79 @@
 	<main>
 
 		<section class="content" data-name="discount">
-			<form action="discount">
+			<form action="discount" class="discount-container">
 				<input class="emaildiscount" type="text" placeholder="email">
 				<input class="passworddiscount" type="password" name="" id="" placeholder="password">
 				<button class="discount-submit">SIGN IN</button>
+				<button class="signout-button">SIGN OUT</button>
 			</form>
+
+			<div class="discount-sweaters">
+				<div class="clothing-row">
+
+					<span class="clothing-img"><img src="../src/assets/img/womanclothing-img/top1.jpeg" alt="">
+						<div class="price-tag" data-price="249">
+
+						</div>
+						<button class="addtocart-button">ADD TO CART</button>
+					</span>
+
+					<span class="clothing-img" data-sustain="sustainable"><img
+							src="../src/assets/img/womanclothing-img/top2.jpeg" alt="">
+						<div class="price-tag" data-price="249">
+
+						</div>
+						<button class="addtocart-button">ADD TO CART</button>
+					</span>
+
+					<span class="clothing-img" data-sustain="sustainable"><img
+							src="../src/assets/img/womanclothing-img/top3.jpeg" alt="">
+						<div class="price-tag" data-price="249">
+
+						</div>
+						<button class="addtocart-button">ADD TO CART</button>
+					</span>
+
+					<span class="clothing-img"><img src="../src/assets/img/womanclothing-img/top4.jpeg" alt="">
+						<div class="price-tag" data-price="399">
+
+						</div>
+						<button class="addtocart-button">ADD TO CART</button>
+					</span>
+				</div>
+
+				<div class="clothing-row" data-sustain="sustainable">
+					<span class="clothing-img"><img src="../src/assets/img/womanclothing-img/top5.jpeg" alt="">
+						<div class="price-tag" data-price="249">
+
+						</div>
+						<button class="addtocart-button">ADD TO CART</button>
+					</span>
+
+					<span class="clothing-img"><img src="../src/assets/img/womanclothing-img/top6.jpeg" alt="">
+						<div class="price-tag" data-price="249">
+
+						</div>
+						<button class="addtocart-button">ADD TO CART</button>
+					</span>
+
+					<span class="clothing-img" data-sustain="sustainable"><img
+							src="../src/assets/img/womanclothing-img/top7.jpeg" alt="">
+						<div class="price-tag" data-price="249">
+
+						</div>
+						<button class="addtocart-button">ADD TO CART</button>
+					</span>
+
+					<span class="clothing-img"><img src="../src/assets/img/womanclothing-img/top8.jpeg" alt="">
+						<div class="price-tag" data-price="249">
+
+						</div>
+						<button class="addtocart-button">ADD TO CART</button>
+					</span>
+				</div>
+
+			</div>
 		</section>
 		<section class="content" data-name="about">
 			<div class="aboutus-container">
@@ -391,7 +459,7 @@
 
 					<label for="phonenumber">
 						PHONENUMBER
-						<input class="phonenumberinput input" for="phonenumber">
+						<input class="phonenumberinput input" for="phonenumber" placeholder="PHONENUMBER">
 						<span class="phonenumber-error"></span>
 					</label>
 
@@ -411,11 +479,14 @@
 
 
 					<button type="submit" class="submitbutton">SUBMIT</button>
-					<button type="submit" class="signout-button">SIGN OUT</button>
 
 				</form>
 
 				<div class="form-message">
+
+				</div>
+
+				<div class="alreadyinuse-message">
 
 				</div>
 

@@ -21,3 +21,19 @@
 .signupbutton-visible {
 	display: flex;
 }
+
+.discounted-sweaters {
+	display: none;
+}
+
+.discounted-sweaters-visible {
+	display: flex;
+}
+
+.aluse {
+	display: none;
+}
+
+.aluse-visible {
+	display: flex;
+}
